@@ -1,0 +1,70 @@
+/* Define as propriedades gerais da tabela */
+.records {
+    width: 100%;
+    user-select: none;
+    text-align: left;
+}
+
+/* Define o estilo dos cabeçalhos da tabela */
+.records th {
+    height: 50px;
+    background-color: var(--primary-color);
+    padding-left: 20px;
+    font-size: 1.2rem;
+}
+
+/* Define o estilo das células da tabela */
+.records td {
+    height: 50px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+/* Define o estilo das últimas colunas (que contêm botões, por exemplo) */
+.records th:last-child,
+.records td:last-child {
+    padding: 0;
+    min-width: 140px;
+    text-align: center;
+}
+
+/* Define o estilo das linhas ao passar o mouse sobre elas */
+.records tr:hover {
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Define as regras específicas para telas menores que 480px */
+@media(max-width:480px) {
+    /* Define o espaçamento entre as células */
+    .records {
+        border-spacing: 5px;
+    }
+
+    /* Oculta o cabeçalho da tabela */
+    .records thead {
+        display:none;
+    }
+
+    /* Adiciona sombra nas linhas da tabela */
+    .records tr {
+        box-shadow: 0 1px 3px var(--shadow-color);
+    }
+
+    /* Define o layout das células, com espaçamento e alinhamento */
+    .records td:not(:first-child) {
+        display:flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    /* Define o espaçamento vertical das células */
+    .records td {
+        margin:10px 0;
+    }
+
+    /* Define o estilo das linhas ao passar o mouse sobre elas, removendo a mudança de cor */
+    .records tr:hover {
+        background-color: inherit;
+    }
+}
